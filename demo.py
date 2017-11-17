@@ -76,6 +76,7 @@ def read_char():
 	if 'Windows' == platform.system():
 		import msvcrt
 		input_char = msvcrt.getch()
+		print input_char,
 
 	else:
 		import tty, termios
