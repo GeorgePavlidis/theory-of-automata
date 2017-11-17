@@ -122,7 +122,7 @@ def check(current_nodes, input_char):
 
 def model():
 	global current_nodes
-	print ('Press <ENTER> to begin:\n')
+	print ('Entrer your characters:\n')
 	input_char='s'
 
 	#GP initialize the current nodes
@@ -135,7 +135,6 @@ def model():
 			 			current_nodes.append(x[1])
 
 
-	print current_nodes
 	while True:
 
 		#read the next character
@@ -201,12 +200,12 @@ if __name__ == "__main__":
 		
 
 
-		#print ("Total_nodes ", Total_nodes)
-		#print ("initial_nodes ", initial_nodes)
-		#print ("final_nodes ", final_nodes)
-		#print ("edges", edges) 
-		while True:
-			model()
-			k = raw_input ("Would you like to try again ??(Y/N) ")
-			if ( k.upper()=='N'):
-				break
+	#print ("Total_nodes ", Total_nodes)
+	#print ("initial_nodes ", initial_nodes)
+	#print ("final_nodes ", final_nodes)
+	#print ("edges", edges) 
+	while True:
+		model()
+		k = raw_input ("Would you like to try again ??(Y/N) ")
+		if ( k.upper()=='N'):
+			break
