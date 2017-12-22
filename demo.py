@@ -75,8 +75,12 @@ def readFile(importFile):
 def read_char():
 	if 'Windows' == platform.system():
 		import msvcrt
+<<<<<<< HEAD
+		input_char = getch.getch()
+=======
 		input_char = msvcrt.getch()
 		print input_char,
+>>>>>>> eb21be4c622b65f551a48b2a503992f8b623bc3f
 
 	else:
 		import tty, termios
@@ -96,10 +100,16 @@ def read_char():
 
 
 
+<<<<<<< HEAD
+def check(current_nodes, input_char='@'):
+	while True:
+		new_current_nodes = []
+=======
 def check(current_nodes, input_char):
 	while True:
 
 		new_current_nodes=[]
+>>>>>>> eb21be4c622b65f551a48b2a503992f8b623bc3f
 		#for each current node..
 		for node in current_nodes:
 
@@ -108,6 +118,39 @@ def check(current_nodes, input_char):
 			
 				#check if the input char is condition for this edge 
 				#or if there is the empty word
+<<<<<<< HEAD
+			 	if x[0]=='@':
+			 		if(current_nodes.count(x[1])==0):
+			 			new_current_nodes.append(x[1])
+			 		# if input_char=='@' and new_current_nodes.count(node)==0:
+			 		# 	print "im in", input_char, 
+			 		# 	new_current_nodes.append(node)
+
+		#GP if the new and the old list are the same it mean that all pollible and suitable nodes are in there
+		if not all(element in current_nodes for element in new_current_nodes):
+			current_nodes = list(current_nodes+new_current_nodes)
+		else:
+			break
+	
+
+	new_current_nodes = []
+	if not input_char=='@':
+		for node in current_nodes:
+
+			# for each edge of this node..
+			for x in edges[node]:
+	
+				#check if the input char is condition for this edge 
+				#or if there is the empty word
+			 	if x[0]==input_char:
+
+			 		if(new_current_nodes.count(x[1])==0):
+			 			new_current_nodes.append(x[1])	
+
+		return new_current_nodes
+	return current_nodes
+
+=======
 			 	if x[0]==input_char or x[0]=='@':
 			 		if(new_current_nodes.count(x[1])==0):
 			 			new_current_nodes.append(x[1])
@@ -117,24 +160,36 @@ def check(current_nodes, input_char):
 			current_nodes = new_current_nodes
 		else:
 			return current_nodes
+>>>>>>> eb21be4c622b65f551a48b2a503992f8b623bc3f
 
 
 
 def model():
 	global current_nodes
+<<<<<<< HEAD
+	print ('Press <ENTER> to begin:\n')
+=======
 	print ('Entrer your characters:\n')
+>>>>>>> eb21be4c622b65f551a48b2a503992f8b623bc3f
 	input_char='s'
 
 	#GP initialize the current nodes
 	for i in range(0,Total_nodes):
 		if initial_nodes[i]==1:
 			current_nodes.append(i)
+<<<<<<< HEAD
+			current_nodes = check(current_nodes)
+
+
+	print current_nodes
+=======
 		 	for x in edges[i]: 
 			 	if x[0]=='@':
 			 		if(current_nodes.count(x[1])==0):
 			 			current_nodes.append(x[1])
 
 
+>>>>>>> eb21be4c622b65f551a48b2a503992f8b623bc3f
 	while True:
 
 		#read the next character
